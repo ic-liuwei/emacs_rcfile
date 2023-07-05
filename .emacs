@@ -29,14 +29,20 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/emacs-neotree-dev")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+(setq neo-theme 'ascii)
+(setq neo-smart-open t)
+(neotree-toggle)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/tabbar-master")
 (require 'tabbar)
 (tabbar-mode)
 
-(setq initial-frame-alist '((top . 1)
-			    (left . 5)
-			    (width . 115)
+(setq initial-frame-alist '((top . 20)
+			    (left . 20)
+			    (width . 140)
 			    (height . 40)))
 
 (set-default-font "-adobe-courier-medium-r-normal--18-180-75-75-m-110-iso8859-1")
+
+(global-linum-mode 1) ; always show line numbers                              
+(setq linum-format "%d")  ;set format
