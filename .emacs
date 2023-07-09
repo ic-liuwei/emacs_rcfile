@@ -3,6 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (tango-dark)))
  '(inhibit-startup-screen t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -42,10 +43,18 @@
 			    (width . 140)
 			    (height . 40)))
 
-(set-default-font "-adobe-courier-medium-r-normal--18-180-75-75-m-110-iso8859-1")
-
+;;(set-default-font "-adobe-courier-medium-r-normal--18-180-75-75-m-110-iso8859-1")
+(set-default-font "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
 (global-linum-mode 1) ; always show line numbers                              
 (setq linum-format "%d")  ;set format
 
 ;;(defalias 'yes-or-no-p 'y-or-n-p)
-(fset 'yes-or-no-p 'y-or-n-p)
+;;(fset 'yes-or-no-p 'y-or-n-p)
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; config themes
+(setq custom-enabled-themes (quote (tango-dark)))
+
+;; config badwolf theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/lisp/theme/")
+(load-theme 'badwolf t)
