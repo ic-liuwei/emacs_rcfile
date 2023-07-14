@@ -37,14 +37,27 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/tabbar-master")
 (require 'tabbar)
 (tabbar-mode)
+(defun tabbar-buffer-groups ()
+  (list
+   (cond
+    ((string-equal "*" (substring (buffer-name) 0 1))
+     "Emacs Buffer"
+     )
+    (t
+     "User Buffer"
+     )
+    )
+   )
+  )
+(setq tabbar-buffer-groups-function 'tabbar-buffer-groups)
 
 (setq initial-frame-alist '((top . 20)
 			    (left . 20)
 			    (width . 140)
 			    (height . 40)))
 
-;;(set-default-font "-adobe-courier-medium-r-normal--18-180-75-75-m-110-iso8859-1")
-(set-default-font "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
+(set-default-font "-adobe-courier-medium-r-normal--18-180-75-75-m-110-iso8859-1")
+;;(set-default-font "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
 (global-linum-mode 1) ; always show line numbers                              
 (setq linum-format "%d")  ;set format
 
@@ -58,3 +71,15 @@
 ;; config badwolf theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/lisp/theme/")
 (load-theme 'badwolf t)
+
+;; highlight
+(global-set-key [f4] 'highlight-symbol-at-point)
+(global-set-key [(control f4)] 'highlight-regexp)
+(global-set-key [(shift f4)] 'unhighlight-regexp)
+
+;; show pairs parentheses
+(show-paren-mode t)
+(require 'paren)
+(set-face-background 'show-paren-match "#def")
+(set-face-foreground 'show-paren-match (face-background 'default))
+(set-face-attribute 'show-paren-match nil :weight 'extra-bold)
