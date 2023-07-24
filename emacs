@@ -11,7 +11,7 @@
  ;; If there is more than one, they won't work right.
  )
 (setq inhibit-startup-screen t)
-;; 关闭滚屏的提示音
+;; disable scrol ring bell
 (setq ring-bell-function 'ignore)
 
 ;; markdown-mode config
