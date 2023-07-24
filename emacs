@@ -37,7 +37,7 @@
 ;; tabbar: top opened file bar
 (add-to-list 'load-path "~/.emacs.d/lisp/tabbar-master")
 (require 'tabbar)
-(tabbar-mode)
+(tabbar-mode 1)
 ;; config tabbar-buffer-groups
 (defun tabbar-buffer-groups ()
   (list
