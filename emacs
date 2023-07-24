@@ -86,3 +86,8 @@
 (set-face-background 'show-paren-match "#def")
 (set-face-foreground 'show-paren-match (face-background 'default))
 (set-face-attribute 'show-paren-match nil :weight 'extra-bold)
+
+;; emacs smooth scrolling
+(setq scroll-step 1 
+      scroll-margin 2
+      scroll-conservatively 10000) 
