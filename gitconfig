@@ -1,0 +1,10 @@
+[user]
+	name = liuwei_liu
+	email = 634405768@qq.com
+[core]
+	editor = emacs
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
