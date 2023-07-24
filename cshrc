@@ -1,3 +1,5 @@
+setenv PATH "${PATH}:${HOME}/bin:${HOME}/.local/bin"
+
 alias cls "clear"
 alias h "history"
 alias ll "ls -l"
