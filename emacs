@@ -10,6 +10,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+;; close startup screen
 (setq inhibit-startup-screen t)
 ;; disable scrol ring bell
 (setq ring-bell-function 'ignore)
@@ -26,6 +27,7 @@
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 
 (setq make-backup-files nil)
+
 ;; neotree: left dir manager
 (add-to-list 'load-path "~/.emacs.d/lisp/emacs-neotree-dev")
 (require 'neotree)
@@ -75,11 +77,6 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/lisp/theme/")
 (load-theme 'badwolf t)
 
-;; highlight
-(global-set-key [f4] 'highlight-symbol-at-point)
-(global-set-key [(control f4)] 'highlight-regexp)
-(global-set-key [(shift f4)] 'unhighlight-regexp)
-
 ;; show pairs parentheses
 (show-paren-mode t)
 (require 'paren)
@@ -91,3 +88,5 @@
 (setq scroll-step 1 
       scroll-margin 2
       scroll-conservatively 10000) 
+
+(require 'key-bind)
